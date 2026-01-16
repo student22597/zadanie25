@@ -1,7 +1,7 @@
 #include <stdio.h>
+#include <stdio.h>
 
-/* Funkcja obliczajaca objetosc prostopadloscianu */
-/*
+/* ===== PROSTOPADLOSCIAN ===== */
 float volume_cuboid(float a, float b, float c) {
     return a * b * c;
 }
@@ -20,14 +20,12 @@ void calculate_volume_cuboid() {
 
     printf("Objetosc prostopadloscianu: %.2f\n", volume_cuboid(a, b, c));
 }
-*/
 
-/* Funkcja obliczajaca objetosc walca */
+/* ===== WALec ===== */
 float volume_cylinder(float r, float h) {
     return 3.14159f * r * r * h;
 }
 
-/* Funkcja wczytujaca dane i wyswietlajaca wynik */
 void calculate_volume_cylinder() {
     float r, h;
 
@@ -40,7 +38,26 @@ void calculate_volume_cylinder() {
     printf("Objetosc walca: %.2f\n", volume_cylinder(r, h));
 }
 
+/* ===== MAIN ===== */
 int main() {
-    calculate_volume_cylinder();
+    int choice;
+
+    printf("=== MENU OBJETOSCI BRYL ===\n");
+    printf("1. Prostopadloscian\n");
+    printf("2. Walec\n");
+    printf("Wybierz opcje: ");
+    scanf("%d", &choice);
+
+    switch (choice) {
+        case 1:
+            calculate_volume_cuboid();
+            break;
+        case 2:
+            calculate_volume_cylinder();
+            break;
+        default:
+            printf("Nieprawidlowy wybor!\n");
+    }
+
     return 0;
 }
